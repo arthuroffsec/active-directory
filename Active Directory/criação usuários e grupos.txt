@@ -1,0 +1,41 @@
+OBJETIVO
+--------
+Popular a estrutura de OUs do domínio arthur.local com usuários e
+um grupo de segurança, simulando colaboradores reais distribuídos
+pelos departamentos de vendas e RH.
+ 
+FERRAMENTA UTILIZADA
+---------------------
+Active Directory Users and Computers (ADUC), clicando com o botão
+direito sobre a OU de destino > New > User (ou Group).
+ 
+USUÁRIOS CRIADOS
+-----------------
+ 
+1) João Félix
+   - OU de criação: arthur.local/vendas
+   - First name: joão
+   - Last name: félix
+   - Full name: joão félix
+   - User logon name (UPN): joão félix@arthur.local
+   - User logon name pre-Windows 2000: ARTHUR\João Félix
+ 
+2) Maicon Silva
+   - OU de criação: arthur.local/vendas
+   - Tipo: User
+ 
+3) Maria Fernanda
+   - OU de criação: arthur.local/RH
+   - Tipo: User
+ 
+GRUPO DE SEGURANÇA CRIADO
+---------------------------
+ 
+RH tecnologia
+   - OU de criação: arthur.local/RH
+   - Tipo: Security Group
+   - Finalidade: agrupar usuários do RH que precisam de acesso a
+     recursos relacionados à área de tecnologia (ex: pasta
+     compartilhada, sistema interno, impressora específica),
+     permitindo atribuir permissões ao grupo em vez de a cada
+     usuário individualmente.

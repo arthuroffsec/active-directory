@@ -1,0 +1,53 @@
+OBJETIVO
+--------
+Organizar o domínio arthur.local em Unidades Organizacionais (OUs),
+simulando a divisão departamental de uma empresa, para facilitar a
+futura aplicação de GPOs (Group Policy Objects) e delegação de
+permissões por setor.
+ 
+FERRAMENTA UTILIZADA
+---------------------
+Active Directory Users and Computers (ADUC), acessado via
+Server Manager > Tools > Active Directory Users and Computers.
+ 
+ESTRUTURA CRIADA
+-----------------
+arthur.local
+ |
+ |-- vendas             
+ |     |-- financeiro      
+ |
+ |-- RH                    
+ |
+ |-- Users                 
+ 
+ 
+DETALHAMENTO
+------------
+1. OU "vendas"
+   Criada na raiz do domínio para agrupar os objetos (usuários)
+   pertencentes ao departamento de vendas.
+ 
+2. Sub-OU "financeiro"
+   Criada DENTRO da OU "vendas", representando um subsetor do
+   departamento (financeiro ligado à área comercial). Essa
+   hierarquia permite aplicar políticas específicas ao financeiro
+   sem afetar o restante de vendas, ou herdar políticas do nível
+   superior (vendas) quando fizer sentido.
+ 
+3. OU "RH"
+   Criada na raiz do domínio para agrupar os objetos do
+   departamento de Recursos Humanos, incluindo usuários e o grupo
+   de segurança "RH tecnologia".
+ 
+MOTIVO DO USO DE OUs
+---------------------
+- Organização lógica dos objetos do domínio por departamento.
+- Possibilidade de aplicar GPOs (políticas de grupo) de forma
+  granular, afetando apenas os usuários/computadores de uma OU
+  específica.
+- Delegação de permissões administrativas por setor (ex: dar a um
+  usuário de RH permissão para resetar senha apenas dos usuários
+  dentro da OU RH).
+- Facilita a escalabilidade do domínio conforme novos setores ou
+  filiais sejam adicionados.

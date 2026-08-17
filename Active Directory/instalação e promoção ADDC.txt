@@ -1,0 +1,29 @@
+PASSOS REALIZADOS
+------------------
+1. No Server Manager, adicionado o papel "Active Directory Domain
+   Services" (AD DS) através do assistente "Add Roles and Features".
+ 
+2. Após a instalação do papel, iniciada a promoção do servidor a
+   controlador de domínio através do ícone de notificação (flag) no
+   Server Manager > "Promote this server to a domain controller".
+ 
+3. Selecionada a opção de criar uma NOVA FLORESTA, definindo o nome
+   de domínio raiz como:
+ 
+       "arthur.local"
+ 
+4. Na etapa "Domain Controller Options", configurado:
+ 
+   - Forest functional level: Windows Server 2016
+   - Domain functional level: Windows Server 2016
+   - Domain Name System (DNS) server: HABILITADO
+   - Global Catalog (GC): HABILITADO
+   - Read Only Domain Controller (RODC): desabilitado
+   - Definida a senha do DSRM (Directory Services Restore Mode)
+ 
+5. Prosseguido com as demais etapas do assistente (NetBIOS name,
+   caminhos de banco de dados/logs/SYSVOL, revisão das opções e
+   verificação de pré-requisitos).
+ 
+6. Concluída a instalação, com reinicialização automática do
+   servidor para efetivar a promoção a controlador de domínio.
